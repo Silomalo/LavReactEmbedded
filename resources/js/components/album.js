@@ -14,7 +14,13 @@ function ImageGallary() {
 
   const loadList = async () => {
     const result = await axios.get('/api/list');
-    setLoadImage(result.data.reverse);
+    if(result.data.status===200){
+        setLoadImage(result.data.reverse);
+    }else{
+        console.log("Role not permitting!");
+        window.location.href = "/";
+    }
+
   };
 
 

@@ -21,7 +21,9 @@ Route::put('/update-student/{id}','App\Http\Controllers\ExploitController@update
 Route::delete('/delete-student/{id}','App\Http\Controllers\ExploitController@destroy');
 
 Route::post('/uploadimg','App\Http\Controllers\ExploitController@storeimage');
+Route::middleware(['Check'])->group(function(){
 Route::get('/list','App\Http\Controllers\ExploitController@reverse');
+});
 Route::get('/deleteimg/{id}','App\Http\Controllers\ExploitController@destroyimg');
 //Route::post('/add-student',[ExploitController::class,'store']);
 

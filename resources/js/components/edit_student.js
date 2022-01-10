@@ -38,12 +38,14 @@ function Editstudent() {
                   icon: "success",
                   button: "OK!",
                 });
+                window.location.href = "/";
                 setState({
                   name:'',
                   course:'',
                   email:'',
                   phone:'',
                 });
+
               }else{
                 setState({
                   error_list:res.data.validate_err,
