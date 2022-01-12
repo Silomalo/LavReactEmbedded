@@ -1,21 +1,26 @@
 
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
-import Student from './components/Student';
-import Addstudent from './components/add_student';
-import Editstudent from './components/edit_student';
-import ImageGallary from './components/album';
-import Login from './components/Login'; 
+import { Suspense, lazy } from 'react';
+const Student =lazy(() => import ( './components/Student'))
+const Addstudent =lazy(() => import ( './components/add_student'))
+const Editstudent =lazy(() => import ( './components/edit_student'))
+const ImageGallary =lazy(() => import ( './components/album'))
+const Login =lazy(() => import ( './components/Login'))
+const App =lazy(() => import ( './tester'))
 
 function Appmain() {
   return (
     <BrowserRouter>
+    <Suspense fallback={<div>Loading...</div>}>
     <Routes>
         <Route exact path="/get-in" element={<Login/>} />
+        <Route exact path="/get" element={<App/>} />
         <Route exact path="/" element={<Student/>} />
         <Route path="/add-student" element={<Addstudent/>} />
         <Route path="/edit-student/:id" element={<Editstudent/>} />
         <Route path="/myalbum" element={<ImageGallary/>} />
     </Routes>
+    </Suspense>
     </BrowserRouter>
   );
 }

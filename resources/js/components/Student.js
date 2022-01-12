@@ -62,6 +62,8 @@ class Student extends Component {
             <div >
                 <header className="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
                 <div className="container-fluid d-flex align-items-center">
+
+                    <Link to={'get'} className="ms-auto link-light" hreflang="ar">lazyload</Link>
                     <Link to={'get-in'} className="ms-auto link-light" hreflang="ar">Login</Link>
                     <Link to={'myalbum'} className="ms-auto link-light" hreflang="ar">My Album</Link>
                     <Link to={'add-student'} className="ms-auto link-light" hreflang="ar">Add Student</Link>
