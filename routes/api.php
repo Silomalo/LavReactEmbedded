@@ -26,7 +26,7 @@ Route::get('/list','App\Http\Controllers\ExploitController@reverse');
 });
 Route::get('/deleteimg/{id}','App\Http\Controllers\ExploitController@destroyimg');
 //Route::post('/add-student',[ExploitController::class,'store']);
-
+//
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
